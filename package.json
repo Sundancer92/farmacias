@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "axios": "^1.2.2",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "name": "farma-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "cypress": "^12.3.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "cypress open",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "chile",
+    "ejercicio",
+    "html",
+    "bootstrap",
+    "axios",
+    "javascript"
+  ],
+  "author": "Sundancer92",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "b649e95b-b34c-44a8-87f3-54aa3d386b91",
+		"name": "Ejercicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3632963"
+	},
+	"item": [
+		{
+			"name": "maps_obtener_regiones",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "func",
+							"value": "regiones",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://seremienlinea.minsal.cl/farmacias/mapa.php",
+					"protocol": "https",
+					"host": [
+						"seremienlinea",
+						"minsal",
+						"cl"
+					],
+					"path": [
+						"farmacias",
+						"mapa.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "maps_obtener_comunas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "func",
+							"value": "comunas",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://seremienlinea.minsal.cl/farmacias/mapa.php",
+					"protocol": "https",
+					"host": [
+						"seremienlinea",
+						"minsal",
+						"cl"
+					],
+					"path": [
+						"farmacias",
+						"mapa.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "maps_region_comunas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "func",
+							"value": "comunas",
+							"type": "text"
+						},
+						{
+							"key": "region",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://seremienlinea.minsal.cl/farmacias/mapa.php",
+					"protocol": "https",
+					"host": [
+						"seremienlinea",
+						"minsal",
+						"cl"
+					],
+					"path": [
+						"farmacias",
+						"mapa.php"
+					],
+					"query": [
+						{
+							"key": "region_id",
+							"value": "7",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_farmas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "func",
+							"value": "sector",
+							"type": "text"
+						},
+						{
+							"key": "filtro",
+							"value": "todos",
+							"type": "text"
+						},
+						{
+							"key": "fecha",
+							"value": "2023-09-01",
+							"type": "text"
+						},
+						{
+							"key": "region",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comuna",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "la",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lng",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "latMin",
+							"value": "-33.42434971266427",
+							"type": "text"
+						},
+						{
+							"key": "latMax",
+							"value": "-33.38895457380163",
+							"type": "text"
+						},
+						{
+							"key": "lngMin",
+							"value": "-70.64174652099611",
+							"type": "text"
+						},
+						{
+							"key": "lngMax",
+							"value": "-70.47789573669435",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://seremienlinea.minsal.cl/farmacias/mapa.php",
+					"protocol": "https",
+					"host": [
+						"seremienlinea",
+						"minsal",
+						"cl"
+					],
+					"path": [
+						"farmacias",
+						"mapa.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
