@@ -74,10 +74,13 @@
 		async function getRegiones() {
 			await axios(URL + "/regiones")
 				.then((res) => {
+					// Se prepara la data devuelta del back.
 					const regiones = res.data;
+					// Se limpia el SELECT.
 					regionesSelect.innerHTML = `
 					<option hidden value="">Selecciona la Región</option>
 					`;
+					// Se recorre el arreglo y se incertan las opciones con su ID y NOMBRE.
 					regiones.forEach((region, index) => {
 						regionesSelect.innerHTML += `
 						<option value="${region.id}" }>${region.nombre}</option>
@@ -93,7 +96,9 @@
 		async function getComunas(idRegion) {
 			await axios(URL + `/comunas/${idRegion}`)
 				.then((res) => {
+					// Se prepara la data devuelta del back.
 					const comunas = res.data;
+					// Se limpia el SELECT.
 					comunasSelect.innerHTML = `
 				<option hidden value="">Selecciona la Comuna</option>
 					`;
@@ -112,7 +117,9 @@
 		async function getNombreFarmacias() {
 			await axios(URL + "/nombreFarmacias")
 				.then((res) => {
+					// Se prepara la data devuelta del back.
 					const nombreFarmacias = res.data;
+					// Se limpia el SELECT.
 					farmaciasSelect.innerHTML = `
 					<option hidden value="">Selecciona tu Farmacia</option>
 					`;
@@ -128,20 +135,21 @@
 		}
 
 		async function getFarmacias() {
+			// Se recupera el value de las select.
 			const idRegion = document.getElementById("regionesSelect").value;
 			const idComuna = document.getElementById("comunasSelect").value;
 			const nombreFarmacia =
 				document.getElementById("farmaciasSelect").value;
 
-			// console.log("Region: " + idRegion);
-			// console.log("Comuna: " + idComuna);
-			// console.log("Farmacia: " + nombreFarmacia);
+			// Se limpia el contenedor de farmacias.
 			cardsFarmacias.innerHTML = "";
 
 			await axios
 				.post(URL + `/farmacias/${idRegion}&${idComuna}&${nombreFarmacia}`)
 				.then((res) => {
+					// Se prepara la data devuelta del back.
 					const farmacias = res.data;
+					// Se recorre el arreglo e inserta una tarjeta por cada farmacia devuelta del back.
 					farmacias.forEach((farmacia, index) => {
 						cardsFarmacias.innerHTML += `
 						<div class="col-3">
@@ -171,18 +179,19 @@
 		(() => {
 			"use strict";
 
-			// Fetch all the forms we want to apply custom Bootstrap validation styles to
 			const forms = document.querySelectorAll(".needs-validation");
 
-			// Loop over them and prevent submission
+			// Recorremos los campos del formulario
 			Array.from(forms).forEach((form) => {
 				form.addEventListener(
 					"submit",
 					(event) => {
+						// para validar si están completos.
 						if (!form.checkValidity()) {
 							event.preventDefault();
 							event.stopPropagation();
 						} else {
+							// En caso de estarlos, se realiza la petición al back.
 							event.preventDefault();
 							getFarmacias();
 						}

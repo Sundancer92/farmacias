@@ -25,12 +25,16 @@ const getFarmaciasDeTurno = async (idRegion, idComuna, nombreFarmacia, res) => {
 		data: data,
 	};
 
+	// Se prepara el array vacio que guardará las farmacias de turno.
 	const farmaciasDeTurno = [];
 
 	await axios(config)
 		.then(function (response) {
+			// Se recorre el arreglo devuelto por el servidor
 			response.data.respuesta.locales.forEach((local) => {
+				// y si la farmacia búscada coincide con la del arreglo
 				if (local.nm == nombreFarmacia) {
+					// Se guarda en "farmaciasDeTurno".
 					farmaciasDeTurno.push(local);
 				}
 			});

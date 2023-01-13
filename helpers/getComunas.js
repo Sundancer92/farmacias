@@ -4,6 +4,7 @@ const getComunas = async (idRegion, res) => {
 	var FormData = require("form-data");
 	var data = new FormData();
 	data.append("func", "comunas");
+	// Se filtra la comuna según la región requerida.
 	data.append("region", idRegion);
 
 	var config = {
@@ -16,11 +17,12 @@ const getComunas = async (idRegion, res) => {
 		data: data,
 	};
 
+	// Se prepara la variable que alojará y retornará las comunas.
 	const comunas = [];
 
 	await axios(config)
 		.then(function (response) {
-			//console.log(response.data.respuesta)
+			// Se recorré el arreglo devuelto por el servidor y se inserta en "comunas".
 			response.data.respuesta.forEach((comuna) => comunas.push(comuna));
 		})
 		.catch(function (error) {

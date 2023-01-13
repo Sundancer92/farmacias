@@ -14,10 +14,12 @@ const getRegiones = async (req, res) => {
 		data: data,
 	};
 
+	// Se prepara la variable que alojará y devolverá las regiones.
 	const regiones = [];
 
 	await axios(config)
 		.then(function (response) {
+			// Se recorre el arrglo devuelto por el servidor y se inserta la region en "regiones".
 			response.data.respuesta.forEach((region) => regiones.push(region));
 		})
 		.catch(function (error) {
